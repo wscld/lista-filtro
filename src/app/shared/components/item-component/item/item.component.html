@@ -1,0 +1,26 @@
+<p-card styleClass="p-mb-3">
+    <div class="p-d-flex p-ai-center p-jc-between">
+        <div>
+            <h4 class="p-m-0">
+                {{carro.nome}}
+            </h4>
+        </div>
+        <div>
+            <button *ngIf="!exibir" pButton pRipple type="button" icon="pi pi-angle-down" (click)="toggle()"
+                label="Ver detalhes ação" class="p-button-text"></button>
+            <button *ngIf="exibir" pButton pRipple type="button" icon="pi pi-angle-up" (click)="toggle()"
+                label="Ocultar detalhes ação" class="p-button-text"></button>
+        </div>
+    </div>
+    <div *ngIf="exibir">
+        <p-divider></p-divider>
+        <div class="p-d-flex p-mt-4 p-jc-between">
+            <div>
+                {{carro.marca}} {{carro.nome}} - {{carro.ano}}
+            </div>
+            <div>
+                <p-button (onClick)="vejaMais()" label="Ver mais"></p-button>
+            </div>
+        </div>
+    </div>
+</p-card>

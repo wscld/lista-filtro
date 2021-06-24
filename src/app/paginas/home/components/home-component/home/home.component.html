@@ -1,0 +1,15 @@
+<div class="header p-mb-4">
+    <div class="container">
+        <h3>Filtro JDM</h3>
+        <span class="p-input-icon-right">
+            <i class="pi pi-search"></i>
+            <input type="text" pInputText (input)="filtrarCarros()" placeholder="Buscar carros..."
+                [(ngModel)]="filtroCarros" />
+        </span>
+    </div>
+</div>
+<div class="container p-pb-6">
+    <app-item *ngFor="let carro of carros" (exibirCarro)="exibirDialog($event)" [carro]="carro"></app-item>
+</div>
+
+<p-confirmDialog header="Tem certeza que deseja ir para a tela?"></p-confirmDialog>
